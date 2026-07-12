@@ -37,7 +37,7 @@ const getCustomerQuoteTemplate = (name, details) => {
       <div class="container">
         <!-- Brand Header Section -->
         <div class="logo-section">
-          <img class="logo-img" src="http://localhost:3000/uploads/logo.png" alt="My Travel Bandhu" />
+          <img class="logo-img" src="https://mytravelbandhubackend.onrender.com/uploads/logo.png" alt="My Travel Bandhu" />
         </div>
         
         <div class="content">
@@ -144,7 +144,7 @@ const getCustomerContactTemplate = (name, details) => {
       <div class="container">
         <!-- Brand Header Section -->
         <div class="logo-section">
-          <img class="logo-img" src="http://localhost:3000/uploads/logo.png" alt="My Travel Bandhu" />
+          <img class="logo-img" src="https://mytravelbandhubackend.onrender.com/uploads/logo.png" alt="My Travel Bandhu" />
         </div>
         
         <div class="content">

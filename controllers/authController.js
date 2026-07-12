@@ -91,11 +91,17 @@ const loginAdmin = async (req, res) => {
         const emailSubject = `Admin Console Verification Code: ${otp}`;
         const emailHtml = getOTPTemplate(user.name, otp);
 
-        await sendEmail({
+        const emailResult = await sendEmail({
           to: user.email,
           subject: emailSubject,
           html: emailHtml,
         });
+
+        if (!emailResult.success) {
+          return res.status(500).json({ 
+            message: `Failed to send verification code. Details: ${emailResult.reason || emailResult.error?.message || 'SMTP Error'}` 
+          });
+        }
 
         return res.json({
           requiresOTP: true,

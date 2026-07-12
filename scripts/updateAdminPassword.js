@@ -25,12 +25,15 @@ const updatePassword = async () => {
       });
     }
 
-    user.email = 'ankitrathor0661@gmail.com';
-    user.password = 'Ankit@123'; // Will be hashed automatically by pre-save hook
+    const adminEmail = process.env.ADMIN_EMAIL || 'ankitrathor0661@gmail.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Ankit@123';
+
+    user.email = adminEmail;
+    user.password = adminPassword; // Will be hashed automatically by pre-save hook
     await user.save();
     console.log('Admin credentials updated successfully:');
-    console.log('Email: ankitrathor0661@gmail.com');
-    console.log('Password: Ankit@123');
+    console.log(`Email: ${adminEmail}`);
+    console.log(`Password: ${adminPassword}`);
     process.exit(0);
   } catch (err) {
     console.error('Error updating password:', err);

@@ -66,13 +66,16 @@ const seedData = async () => {
 
     // 3. Create Admin User
     console.log('Seeding default administrator account...');
+    const adminEmail = process.env.ADMIN_EMAIL || 'ankitrathor0661@gmail.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Ankit@123';
+
     await User.create({
       name: 'System Administrator',
-      email: 'ankitrathor0661@gmail.com',
-      password: 'Ankit@123', // Will be hashed by pre-save hook in User model
+      email: adminEmail,
+      password: adminPassword, // Will be hashed by pre-save hook in User model
       role: 'admin'
     });
-    console.log('Admin account created (User: ankitrathor0661@gmail.com, Password: Ankit@123).');
+    console.log(`Admin account created (User: ${adminEmail}, Password: ${adminPassword}).`);
 
     // 4. Seed Packages (Domestic + International)
     console.log('Seeding packages...');

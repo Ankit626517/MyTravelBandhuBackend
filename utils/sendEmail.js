@@ -25,6 +25,9 @@ const sendEmail = async ({ to, subject, html }) => {
         user,
         pass,
       },
+      tls: {
+        rejectUnauthorized: false
+      }
     });
 
     const info = await transporter.sendMail({
