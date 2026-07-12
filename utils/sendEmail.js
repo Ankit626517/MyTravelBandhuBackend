@@ -27,7 +27,8 @@ const sendEmail = async ({ to, subject, html }) => {
       },
       tls: {
         rejectUnauthorized: false
-      }
+      },
+      family: 4 // Force IPv4 resolution to prevent ENETUNREACH on cloud environments like Render
     });
 
     const info = await transporter.sendMail({
