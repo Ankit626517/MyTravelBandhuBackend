@@ -92,7 +92,7 @@ const getCustomerQuoteTemplate = (name, details) => {
           
           <!-- Direct WhatsApp Call to Action -->
           <div class="btn-container">
-            <a href="https://wa.me/919343770661?text=Hi!%20I%20have%20submitted%20a%20holiday%20quote%20enquiry." class="btn">
+            <a href="https://wa.me/919522222583?text=Hi!%20I%20have%20submitted%20a%20holiday%20quote%20enquiry." class="btn">
               💬 Discuss Immediately on WhatsApp
             </a>
           </div>
@@ -101,7 +101,7 @@ const getCustomerQuoteTemplate = (name, details) => {
         <!-- Footer -->
         <div class="footer">
           <div class="footer-logo">My Travel Bandhu</div>
-          <p>Email: ankitrathor0661@gmail.com | Phone: +91 93437 70661</p>
+          <p>Email: Info.mytravelbandhu@gmail.com | Phone: +91 95222 22583</p>
           <p>12, Connaught Place, New Delhi, India 110001</p>
           <p style="margin-top: 15px; font-size: 11px; color: #94a3b8;">This is a transactional confirmation email regarding your holiday request.</p>
         </div>
@@ -172,7 +172,7 @@ const getCustomerContactTemplate = (name, details) => {
           
           <!-- Direct WhatsApp Call to Action -->
           <div class="btn-container">
-            <a href="https://wa.me/919343770661?text=Hi!%20I%20have%20a%20support%20query." class="btn">
+            <a href="https://wa.me/919522222583?text=Hi!%20I%20have%20a%20support%20query." class="btn">
               💬 Speak to Support on WhatsApp
             </a>
           </div>
@@ -181,7 +181,7 @@ const getCustomerContactTemplate = (name, details) => {
         <!-- Footer -->
         <div class="footer">
           <div class="footer-logo">My Travel Bandhu</div>
-          <p>Email: ankitrathor0661@gmail.com | Phone: +91 93437 70661</p>
+          <p>Email: Info.mytravelbandhu@gmail.com | Phone: +91 95222 22583</p>
           <p>12, Connaught Place, New Delhi, India 110001</p>
           <p style="margin-top: 15px; font-size: 11px; color: #94a3b8;">This is a transactional support confirmation email.</p>
         </div>

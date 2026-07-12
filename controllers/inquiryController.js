@@ -59,7 +59,7 @@ const createQuoteInquiry = async (req, res) => {
     `;
     
     sendEmail({
-      to: 'ankitrathor0661@gmail.com',
+      to: process.env.ADMIN_EMAIL || 'Info.mytravelbandhu@gmail.com',
       subject: emailSubject,
       html: emailHtml,
     }).catch(err => console.error('Failed to send admin notification email:', err));
@@ -119,7 +119,7 @@ const createContactInquiry = async (req, res) => {
     `;
     
     sendEmail({
-      to: 'ankitrathor0661@gmail.com',
+      to: process.env.ADMIN_EMAIL || 'Info.mytravelbandhu@gmail.com',
       subject: emailSubject,
       html: emailHtml,
     }).catch(err => console.error('Failed to send admin notification email:', err));

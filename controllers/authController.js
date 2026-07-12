@@ -70,7 +70,7 @@ const registerAdmin = async (req, res) => {
   }
 };
 
-// @desc    Auth admin & generate/send OTP code
+// @desc    Auth admin & return token directly (OTP disabled as per request)
 // @route   POST /api/auth/login
 // @access  Public
 const loginAdmin = async (req, res) => {
@@ -80,37 +80,6 @@ const loginAdmin = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await user.comparePassword(password))) {
-      // If user is Admin, initiate 2FA OTP flow
-      if (user.role === 'admin') {
-        const otp = Math.floor(100000 + Math.random() * 900000).toString();
-        user.otp = otp;
-        user.otpExpire = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes validity
-        await user.save();
-
-        // Send verification code email
-        const emailSubject = `Admin Console Verification Code: ${otp}`;
-        const emailHtml = getOTPTemplate(user.name, otp);
-
-        const emailResult = await sendEmail({
-          to: user.email,
-          subject: emailSubject,
-          html: emailHtml,
-        });
-
-        if (!emailResult.success) {
-          return res.status(500).json({ 
-            message: `Failed to send verification code. Details: ${emailResult.reason || emailResult.error?.message || 'SMTP Error'}` 
-          });
-        }
-
-        return res.json({
-          requiresOTP: true,
-          email: user.email,
-          message: 'Security verification code sent to your email.'
-        });
-      }
-
-      // Fallback for non-admin roles (regular login directly)
       res.json({
         _id: user._id,
         name: user.name,
